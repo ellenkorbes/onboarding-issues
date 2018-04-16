@@ -1,0 +1,281 @@
+Desafios com Onboarding em Grandes Projetos Open Source
+Falando de Kubernetes
+18 Apr 2018
+Tags: kubernetes, open source
+
+Ellen Körbes
+e@ellenkorbes.com
+@ellenkorbes
+
+* Quem?
+
+- Ellen Körbes
+- Atualmente: Big Data Developer
+- Dezembro/2017 a março/2018: Developer full-time no projeto Kubernetes
+
+[kubernetes logo]
+
+* Kube-oquê?
+
+Wikipedia:
+
+"Kubernetes is an open-source system for automating deployment, scaling and management of containerized applications...
+
+It aims to provide a "platform for automating deployment, scaling, and operations of application containers across clusters of hosts". It works with a range of container tools, including Docker."
+
+Tem:
+
+- Uns 2 mil contribuidores.
+- Umas 2 milhões de linhas de código.
+
+* O problema: onboarding é difícil.
+
+* O problema do onboarding...
+
+- Como é que uma pessoa sozinha faz pra entender como todo o projeto funciona e começar a fazer contribuições?
+- O problema do Kubernetes é que tem muito Kubernetes. Muita coisa, muito código, muitos docs, muito tudo.
+- E o problema é que ou já tem um sistema pronto, ou alguem do projeto vai ter que investir tempo nesse onboarding do novo contribuidor.
+- E tempo é um problema. Não pelo tempo em si, mas por uma questão de comprometimento.
+- "É um projeto aberto. E se eu investir X horas nessa pessoa e semana que vem ela sumir?"
+
+* A solução atual: funcionários de grandes empresas.
+
+- Empresas interessadas alocam funcionários ao projeto.
+- E.g. minha equipe no Kubernetes era toda do Google.
+- Isso funciona pois: A menos que o funcionário se demita, ele não vai simplesmente sumir. E aí é fácil investir tempo em novos contribuidores, pois o retorno é garantido.
+- Isso não ajuda nossa causa pois: Ele incentiva que não haja um processo de onboarding. O contribuidor pode ficar lá se ralando por quantos meses ele precisar até pegar o jeito, e não tem problema.
+- Já contribuidores comuns não vão investir meses do seu tempo livre até conseguir começar a contribuir.
+
+* Outras soluções: Outreachy and GSoC.
+
+- Outreachy: estágios pagos para pessoas de grupos tradicionalmente sub-representados na tecnologia.
+- Google Summer of Code: estágios pagos para estudantes.
+- O problema do comprometimento? Se não trabalhar, não ganha. Resolvido.
+
+* Tá Ellen mas eu não trabalho pro Google e esses estágios não servem pra mim. E agora?
+
+* Tamo tudo lascado então?
+
+- Sim.
+- A menos que se crie um processo onde contribuidores não precisem de ajuda para o onboarding inicial.
+- Aí eles podem mostrar comprometimento primeiro, e receber mais recursos do projeto depois.
+- "Mas Ellen não é assim que todo projeto open source funciona?"
+- Sim.
+- Mas em projetos do tamanho do Kubernetes, não é tão simples assim.
+
+* Mas sério, é tão complicado assim?
+
+Primeiro passo. No Kubernetes, pra contribuir você precisa:
+
+- Assinar o CLA.
+- Achar um SIG pra trabalhar.
+- Fazer o set up do seu ambiente de desenvolvimento.
+
+Não sabe o que é um CLA ou um SIG? 
+
+Tá em um daqueles 70 docs no repositório community. Procura lá.
+
+Boa sorte.
+
+* Mas sério, é tão complicado assim?
+
+Sean Sullivan, contribuidor do SIG-CLI, funcionário do Google:
+
+"Most projects have just one system. Say a team of 20 people, one system, complexity isn’t too bad. But Kubernetes is a distributed system, and the amount of things you need to know…"
+
+"The pool of knowledge is far deeper than at any of the other projects I have worked until now. You can spend years becoming an expert on this area, or that area… but then there are tons of other areas, and it’s all changing rapidly. It feels overwhelming."
+
+"There are structures to organize this complexity, [...] It’s only now that they’re creating the kind of infrastructure to organize all of these separate groups across all of Kubernetes. There are, what, almost 40 SIGs now? And they all have different coding styles, different codebases."
+
+* Minha experiência, parte 1.
+
+* Primeiros dias → terror.
+
+- Kubernetes foi meu primeiro projeto de verdade.
+- "Como fazer isso? Dá uma olhada aqui." Eram 200 mil linhas de código.
+- Dias e dias e dias perdida. Natal e ano novo foram estresse total.
+- "Será que isso é pra mim? Será que meu emprego anterior me aceita de volta?"
+
+* Tá. Que que a gente faz então?
+
+- Trabalha.
+- A comunidade do projeto tem que tornar esse onboarding mais fácil, mais claro, mais acessível.
+- O objetivo é que novos contribuidores possam pegar o jeito e começar a contribuir sem precisar de muita ajuda.
+
+* Possíveis soluções: as fáceis.
+
+* Maneiras "molezinha" de tornar seu projeto mais accessível.
+
+- Comece pelo arquivo CONTRIBUTING.md.
+
+
+- Encourage free communication in general. Have your experienced members be available, for short conversations at least. IRC, Slack, mailing list, whatever. Keep it mind it can be really intimidating for a newbie to go talk to fancypants-famous-coder-with-a-bazillion-Twitter-followers.
+- Have a code of conduct, and enforce it. Don’t just act like you care.
+- Keep an eye on the attitude of your community. “Took you long enough,” vs. “Oh okay,” vs. “This is super helpful, thanks a lot!”
+- 2. Keep your issues tracker organized, and use “beginner friendly” or “help wanted” or “good first PR” tags.
+
+* Um parênteses sobre tracker labels.
+
+- deliberately not fix easy or non-critical bugs, and create issues for newbies to fix them instead. Now, do keep in mind that even if the issues are beginner friendly, new contributors are still bound to get intimidated.
+- Recommend what to read to get some background into the issue at hand.
+- Provide directions on where to look in the code base to solve it. Newbies often shy away because they aren’t sure of which files to modify.
+- Some tips on how to solve it wouldn’t hurt either. Not hand-holding, but just generally how to get the ball rolling.
+- Tell who to reach out to if further help is needed. And on that topic…
+
+* Um parênteses sobre tracker labels.
+
+If you’re gonna label an issue as a good first PR:
+1. Make sure it is.
+2. Make it clear to whom it is a good first PR.
+Is that a good issue for a new contributor who’s a senior developer? For a new contributor who’s just graduated? For a new contributor who’s new to CS?
+“Good first PR” doesn’t necessarily equal “good for beginners.” A new contributor with 10 years of experience is different than a new contributor who has just graduated.
+Maybe the issue requires no previous experience… with the system in question. Maybe it requires no experience… with any system, or design patterns in general, or a specific language, I don’t know.
+Point being, if we’re gonna go the self-service way, this needs to be explicit.
+
+* Possíveis soluções: as difíceis.
+
+* As soluções fáceis não são o suficiente...
+
+...não em projetos dessa escala.
+
+By hard I mean these items will take you a few seconds to read. You’ll nod and all, and yeah, they’re kinda obvious.
+But each single one of these could take years to implement in a large community.
+
+* Tenha boa documentação.
+
+- What’s important here? For starters, you need a starting point. One starting point. You need a quick start guide. You need a road map. You need… lots of things.
+- Most importantly, you need to maintain a careful balance between too much and not enough information.
+- You need to have an active group in your community deliberately and purposefully maintaining all this information current, relevant, up to standards. And it’s often useful too to get a historical context of why things are so; without history you may know how things are currently, but it’s often the way there and the path they took that will cement the reasoning for them.
+- You also need to make sure there’s a clear journey: A new contributor starts here, then they read that, then depending on their interest they read this thing or that other thing.
+- Tossing a boatload of documents in a folder, written by people who use different jargon, some being years out of date, and often containing contradictory information… just won’t cut it.
+
+* Tenha bons comentários no código.
+
+- In Go we have a nifty little tool called godoc. It grabs all the comments within your code and generates a nice, organized webpage with it for you.
+- So here’s an idea Kubernetes devs are starting to implement: When you’re gonna review someone else’s code, don’t start by looking at the code. Start with godoc instead. If everything makes perfect sense before you look at a single line of code, then the documentation is good enough. If not, well, try harder.
+- And once that’s done, have someone from a different area of the project take a look. Does it make sense for them?
+- What about for someone familiar with the language, but unfamiliar with the project?
+- Good code isn’t self explanatory. Good explanations are.
+
+* Ensine "as manha" pros novatos.
+
+- I would kill to watch a screen capture of a more experience developer just going about their day, working on the project and narrating what’s going on.
+- Everyone I mentioned this to felt the same way.
+
+* Crie um programa de mentoring.
+
+It’s hard because: the time and commitment issue we discussed earlier.
+Everyone has a different idea of what mentoring is or means. Mentoring is a skill people aren’t born with.
+Idéias: pair coding sessions, code reviews sessions, plain unstructured conversations, answering questions so that the mentee can go from point A to point B in their objectives, and so on.
+Mentoring é lindo. RE: minha palestra no youtube.
+But! We’re not talking about enriching individual lives here. We’re talking about large scale stuff.
+And individual mentoring, unfortunately, doesn’t scale.
+
+* Crie um programa de mentoring coletivo/em grupo.
+
+What’s group mentoring? It’s individual mentoring, plus an audience.
+An unstructured conversation that’s open for spectators, a code review session that’ll go on YouTube once it’s done, and so on.
+- The time vs. commitment question becomes a non-issue. If the person you’re teaching disappears tomorrow, that mentoring session isn’t wasted time. Multiple people learned from it. It’s on YouTube now and anyone can watch it forever. You didn’t invest to teach one person. You invested time to create a community resource.
+- It generates more feedback. Meaning if you don’t know how to mentor, you’ll learn faster this way. And the same if you don’t know how to learn. Making these processes improve becomes a community effort.
+- Instead of catering to the needs of a single individual, you can cater to the needs of a community; while at the same time teaching in a one-on-one manner that’s more effective on the learner’s side (as opposed to say watching tutorials in which mentors are talking to themselves).
+It’s awesome.
+
+* Minha experiência, parte 2.
+
+* O momento da virada.
+
+- Aprendi que é difícil pra todo mundo. O problema não era eu.
+- Me ajuda, porra.
+- Me ajuda assim, assim, e assado.
+- Precisamos de meetings. One-on-ones. Code reviews.
+
+* Consertando: comunidade.
+
+* Documentação
+
+The contributor guide we had before was multi-page document that lived in the community repo. It was spread into multiple different folders and it was all user generated. People would just go and write a how-to or a manual on whatever subject they wanted.
+It was good at first because it allowed the community to have a say in how to contribute to the project, but after a while it resulted in lots of duplicated, not updated, confusing, and disorganized information.
+Now we need a unified vision, and that’s what’s being done right now. Pulling the docs, and working on them, making discoverability better, and so on.
+- The idea is then for contributor docs and end-user docs to be on the same place, and it will all be housed in k8s.io.
+And here’s what the new contributor guide looks like now. https://github.com/kubernetes/community/tree/master/contributors/guide
+
+* Mentoring
+
+- For the long term, there’s an idea being studied about a group mentoring initiative in which we’d take ten people or so and take them through a semi-structured learning environment for about three months. After that they’d graduate up the Kubernetes hierarchy (e.g. members become reviewers, or reviewers become approvers.)
+- This of course raises the question of training mentors, which is still to be discussed.
+- knowing how to teach while also sharing passion and enthusiasm. And of course a sense of genuinely wanting to help is 100% required.
+- Outreachy and Google Summer of Code go here
+
+* Meet Our Contributors
+
+- You might be familiar with Office Hours, where Kubernetes users can ask questions which are then answered in a livestream.
+- So now there’s also Meet Our Contributors, which is similar, but targeted at contributors. As per the description on that link:
+- Meet Our Contributors gives you a monthly one-hour opportunity to ask questions about our upstream community, watch interviews with our contributors, and participate in peer code reviews.
+- The first installment took place on February 7th, and it was awesome.  https://www.youtube.com/watch?v=iqtZKQ2j-LM
+- Once somebody tells me e.g. this code is supposed to do this in such and such a way for such and such objectives, then it’s clear and it’s easy. → After that Aaron Crickenberger adds that although he’s been with the project since before 1.0 even, when he was asked to do work in a new area the other day he still had to go to the people in charge for directions.
+
+* Consertando: código.
+
+* A situação atual.
+
+Sean:
+For example, there are so many different clients that can talk to the API server. There’s dynamic client, there’s OpenAPI schema, there’s client-go which has the hardcoded types, there’s the REST client.
+There’s no reason for how things are done and there’s certainly not any documentation at a high level of what goes where.
+The interaction between components of each of them is a mystery. Projects grow and grow and you just tack stuff onto it ’til it’s a huge difficult mess.
+There are very few people who understands the whole scope of the client to the API server, no one besides Phil, I think.
+Even people who work on this as their day job only know parts of it; the complexity is substantial. Even for small parts it’s a daunting system, and anyone who has made even small PRs is already in the top percentile of the people who understand this.
+Right now there’s this massive monolith, and the path Phil is trying to take us towards is breaking this monolith into smaller tools.
+
+* A situação atual.
+
+ Phillip Wittrock, SIG CLI lead, Google
+The theory is that the biggest challenge for developers is incidental complexity.
+Ideally you’d develop self contained bits where you only need to understand how to use the library, not how it works. So if you have a system that’s three libraries, each with a focussed purpose and a well defined interface, and then a program that invokes those libraries, a developer can approach the system learning only about the program they’re modifying, which is 1/4 of the system.
+If instead the program implements all the stuff in the libraries, the developer needs to understand the interactions of the full system, and separate out the bits that impact them versus the bits that don’t. And interactions between components are N to N, so you get an explosion of complexity (combinatorics).
+So if you want to build a system approachable by new developers you need to keep it simple and focussed. As you expand the system to do more things, you need to logically separate the parts into different packages and subcomponents with clear interfaces.
+
+* A situação atual.
+
+Then I asked about projects that make it easy for new developers to join.
+I don’t think they’re approached quite like “we need to make it easy for new developers to join this project,” but more like, “the code needs to be clean and well structured.” Which is really 80% of making it easy for new developers to join.
+
+* O futuro ideal.
+
+ieces consumed by groups other than the authoring group must be simple, well documented and developed independently from the components that consume them. This can be achieved through:
+– Minimizing cross group dependencies — enabling groups to own their development end to end (proposal, development, testing, publish release artifact, documentation)
+– Ensuring that necessary cross group dependencies are simple, well understood and well documented
+– As Kubernetes contributor, I should be able to understand how to use the public libraries / tools published by groups I am not a member of without learning how they are implemented or reading their source code.
+– As a Kubernetes contributor, I should be able to understand how to use the public libraries / tools published by groups I am not a member without soliciting the attention of a member of those groups.
+
+* Você.
+
+* Quer contribuir?
+
+Be loud. Ask for it. People are busy with their own lives, they aren’t thinking of you all day and wondering if everything is okay. So if you need something, let people know. They often do want to help.
+Keep in mind that mentoring is hard. It’s a skill in itself, and people aren’t born knowing it. So if you need different help than you’re getting, just plain and simple ask for what you need. People genuinely want to help, and often, if they can, they’ll oblige.
+And like Nikhita mentioned in the Meet Our Contributors episode above, know that these things are hard. They just are. I remember being so pissed and upset and at the same time relieved when I learned I wasn’t particularly stupid. The reason things were difficult wasn’t because I wasn’t putting in enough effort, or because I wasn’t capable. Things are just hard, period. Be patient.
+
+* Quer ajudar?
+
+I recommend looking into the disciplines that make up developer advocacy/evangelism/relations. Keynote talks aren’t required. Focus instead of the art of bringing tools and developers closer together. If you want not only to produce code but to reach people, you’ll like it.
+
+* Minha experiência, parte 3.
+
+* No fim dessa história toda...
+
+- I'm fearless and I can take on anything.
+
+* Por fim...
+
+* Links
+
+Onboarding series
+Talk Montanhas
+1o Meet contributors
+https://medium.com/@ashleymcnamara/what-is-developer-advocacy-3a92442b627c
+
+* Agradecimentos
+
+- Paris Pittman, Phillip Wittrock, and Sean Sullivan for taking their time to talk to me about this subject; 
+- Nikhita Raghunath for her feedback and suggestions; 
+- Antoine Pelisse for being an amazing mentor and having more patience than any intern could ever hope for.
