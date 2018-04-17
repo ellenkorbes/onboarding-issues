@@ -283,8 +283,7 @@ Tá lindo.
 
 Sean:
 
-"For example, there are so many different clients that can talk to the API server. There’s dynamic client, there’s OpenAPI schema, there’s client-go which has the hardcoded types, there’s the REST client.
-There’s no reason for how things are done and there’s certainly not any documentation at a high level of what goes where.
+"For example, there are so many different clients that can talk to the API server. There’s dynamic client, there’s OpenAPI schema, there’s client-go which has the hardcoded types, there’s the REST client. There’s no reason for how things are done and there’s certainly not any documentation at a high level of what goes where.
 
 The interaction between components of each of them is a mystery. Projects grow and grow and you just tack stuff onto it ’til it’s a huge difficult mess.
 
