@@ -32,9 +32,12 @@ Tem:
 
 * O problema do onboarding...
 
-- Como é que uma pessoa sozinha faz pra entender como todo o projeto funciona e começar a fazer contribuições?
+Como é que uma pessoa sozinha faz pra entender como todo o projeto funciona e começar a fazer contribuições?
+
+* O problema do onboarding...
+
 - O problema do Kubernetes é que tem muito Kubernetes. Muita coisa, muito código, muitos docs, muito tudo.
-- E o problema é que ou já tem um sistema pronto, ou alguem do projeto vai ter que investir tempo nesse onboarding do novo contribuidor.
+- E o problema nesse tipo de projeto é que ou já tem um sistema pronto, ou alguem vai ter que investir tempo no onboarding do novo contribuidor.
 - E tempo é um problema. Não pelo tempo em si, mas por uma questão de comprometimento.
 - "É um projeto aberto. E se eu investir X horas nessa pessoa e semana que vem ela sumir?"
 
@@ -43,7 +46,7 @@ Tem:
 - Empresas interessadas alocam funcionários ao projeto.
 - E.g. minha equipe no Kubernetes era toda do Google.
 - Isso funciona pois: A menos que o funcionário se demita, ele não vai simplesmente sumir. E aí é fácil investir tempo em novos contribuidores, pois o retorno é garantido.
-- Isso não ajuda nossa causa pois: Ele incentiva que não haja um processo de onboarding. O contribuidor pode ficar lá se ralando por quantos meses ele precisar até pegar o jeito, e não tem problema.
+- Isso não ajuda nossa causa pois: Ele incentiva que não haja um processo de onboarding. O contribuidor pode ficar lá se ralando por quantos meses precisar, sem problemas.
 - Já contribuidores comuns não vão investir meses do seu tempo livre até conseguir começar a contribuir.
 
 * Outras soluções: Outreachy and GSoC.
@@ -108,29 +111,41 @@ Sean Sullivan, contribuidor do SIG-CLI, funcionário do Google:
 
 - Comece pelo arquivo CONTRIBUTING.md.
 
+- Encorage a comunicação. Quem são os membros que podem ajudar? Como faz pra falar com eles? IRC, Slack, e-mail? E qual a atmosfera? Será que um contribuidor novo não vai se intimidar de ir falar com um developer de renome?
 
-- Encourage free communication in general. Have your experienced members be available, for short conversations at least. IRC, Slack, mailing list, whatever. Keep it mind it can be really intimidating for a newbie to go talk to fancypants-famous-coder-with-a-bazillion-Twitter-followers.
-- Have a code of conduct, and enforce it. Don’t just act like you care.
-- Keep an eye on the attitude of your community. “Took you long enough,” vs. “Oh okay,” vs. “This is super helpful, thanks a lot!”
-- 2. Keep your issues tracker organized, and use “beginner friendly” or “help wanted” or “good first PR” tags.
+- Tenha um código de conduta. Não é só pra enfeite.
+
+- Fique de olho na atitude da sua comunidade. Se a resposta ao fechar um issue for "Finalmente!" ao invés de "Massa! Brigadão!" seu projeto vai perder contribuidores. 
+
+- Mantenha seu issues tracker organizado e use labels como "beginner friendly," "help wanted," e "good first PR."
+
+* Sobre o issues tracker...
+
+- Quando você encontrar bugs não-críticos e fáceis de arrumar, não arrume. Ponha a label "beginner friendly" e deixe para um newbie resolver. Assim a pessoa participa e ganhar experiência sem passar muito trabalho.
+
+E quando fizer isso, aproveite pra dar uma força:
+
+- Recomende que docs a pessoa deve ler pra se familiarizar com o assunto.
+
+- Indique que arquivos devem ser modificados para resolver o issue.
+
+- Algumas dicas sobre como resolver não vão atrapalhar também.
+
+- Por fim, deixe claro para quem pedir ajuda, caso necessário.
 
 * Um parênteses sobre tracker labels.
 
-- deliberately not fix easy or non-critical bugs, and create issues for newbies to fix them instead. Now, do keep in mind that even if the issues are beginner friendly, new contributors are still bound to get intimidated.
-- Recommend what to read to get some background into the issue at hand.
-- Provide directions on where to look in the code base to solve it. Newbies often shy away because they aren’t sure of which files to modify.
-- Some tips on how to solve it wouldn’t hurt either. Not hand-holding, but just generally how to get the ball rolling.
-- Tell who to reach out to if further help is needed. And on that topic…
+Quando você colocar um label indicando que um issue é bom para iniciantes:
 
-* Um parênteses sobre tracker labels.
+1. Tenha certeza de que ele realmente é.
 
-If you’re gonna label an issue as a good first PR:
-1. Make sure it is.
-2. Make it clear to whom it is a good first PR.
-Is that a good issue for a new contributor who’s a senior developer? For a new contributor who’s just graduated? For a new contributor who’s new to CS?
-“Good first PR” doesn’t necessarily equal “good for beginners.” A new contributor with 10 years of experience is different than a new contributor who has just graduated.
-Maybe the issue requires no previous experience… with the system in question. Maybe it requires no experience… with any system, or design patterns in general, or a specific language, I don’t know.
-Point being, if we’re gonna go the self-service way, this needs to be explicit.
+2. Deixe claro *para*quais*iniciantes* este é um bom issue.
+
+- Seu iniciante é um senior developer que é novo no projeto?
+- É alguem que acabou de se formar?
+- É alguem que nunca programou na vida?
+
+Pro esquema self-service funcionar, isso tem que estar claro.
 
 * Possíveis soluções: as difíceis.
 
@@ -138,132 +153,208 @@ Point being, if we’re gonna go the self-service way, this needs to be explicit
 
 ...não em projetos dessa escala.
 
-By hard I mean these items will take you a few seconds to read. You’ll nod and all, and yeah, they’re kinda obvious.
-But each single one of these could take years to implement in a large community.
+E as soluções difíceis não são difíceis por serem complicadas. Elas são simples. O difícil é por na prática.
 
 * Tenha boa documentação.
 
-- What’s important here? For starters, you need a starting point. One starting point. You need a quick start guide. You need a road map. You need… lots of things.
-- Most importantly, you need to maintain a careful balance between too much and not enough information.
-- You need to have an active group in your community deliberately and purposefully maintaining all this information current, relevant, up to standards. And it’s often useful too to get a historical context of why things are so; without history you may know how things are currently, but it’s often the way there and the path they took that will cement the reasoning for them.
-- You also need to make sure there’s a clear journey: A new contributor starts here, then they read that, then depending on their interest they read this thing or that other thing.
-- Tossing a boatload of documents in a folder, written by people who use different jargon, some being years out of date, and often containing contradictory information… just won’t cut it.
+- Sua documentação deve ter um ponto inicial. *Um* ponto inicial. 
+- E também um guia de quick start. 
+- E um roadmap. 
+- E... um monte de coisa.
+
+Mas o mais importante: Mantenha um balanço entre dar informação demais, e dar informação de menos.
+
+Ambos são ruins.
+
+* Tenha boa documentação. Mas como?
+
+- É necessário um grupo na sua comunidade ativamente trabalhando na documentação.
+- Mantendo-a relevante, atualizada, e num padrão de qualidade.
+- Sua documentação deve ser organizada usando princípios de story-telling: Primeiro o contribuidor lê isso. Depois aquilo. Depois aquilo lá. Deve haver uma ordem lógica, uma progressão.
+
+Tacar um monte de arquivos numa pasta não é documentação. Principalmente se eles forem escritos por pessoas diferentes, com jargão diferente, em anos diferentes e se contradizendo.
 
 * Tenha bons comentários no código.
 
-- In Go we have a nifty little tool called godoc. It grabs all the comments within your code and generates a nice, organized webpage with it for you.
-- So here’s an idea Kubernetes devs are starting to implement: When you’re gonna review someone else’s code, don’t start by looking at the code. Start with godoc instead. If everything makes perfect sense before you look at a single line of code, then the documentation is good enough. If not, well, try harder.
-- And once that’s done, have someone from a different area of the project take a look. Does it make sense for them?
-- What about for someone familiar with the language, but unfamiliar with the project?
-- Good code isn’t self explanatory. Good explanations are.
+Em Go, temos o godoc. Ele gera documentação a partir dos comentários no código.
+
+E sabe uma coisa legal que estão fazendo no Kubernetes?
+
+Numa PR, antes de ver o código, a gente abre o godoc. Se a documentação não fizer sentido por si só, a PR volta pra review. Sem nem olhar pro código.
+
+Bom código não é auto-explicativo. Boas explicações são.
 
 * Ensine "as manha" pros novatos.
 
-- I would kill to watch a screen capture of a more experience developer just going about their day, working on the project and narrating what’s going on.
-- Everyone I mentioned this to felt the same way.
+Meu sonho no Kubernetes:
+
+Que algum developer experiente fizesse um screen capture do seu dia, narrando o que está fazendo.
 
 * Crie um programa de mentoring.
 
-It’s hard because: the time and commitment issue we discussed earlier.
-Everyone has a different idea of what mentoring is or means. Mentoring is a skill people aren’t born with.
-Idéias: pair coding sessions, code reviews sessions, plain unstructured conversations, answering questions so that the mentee can go from point A to point B in their objectives, and so on.
-Mentoring é lindo. RE: minha palestra no youtube.
-But! We’re not talking about enriching individual lives here. We’re talking about large scale stuff.
-And individual mentoring, unfortunately, doesn’t scale.
+Isso é complicado pois:
+
+- Temos o problema do comprometimento que mencionamos anteriormente.
+
+- Cada um tem uma idéia diferente sobre como mentoring deve ser.
+
+- Ser um bom mentor é uma habilidade que deve ser aprendida. Poucos nascem sabendo.
+
+Idéias:
+
+- Sessões de pair-programming.
+
+- Code reviews.
+
+- Conversas não-estruturadas, para tirar dúvidas.
+
+* Crie um programa de mentoring.
+
+Mentoring é lindo.
+
+Mas é uma coisa individual. E aí temos um problema de escala.
+
+Por isso que o ideal é...
 
 * Crie um programa de mentoring coletivo/em grupo.
 
-What’s group mentoring? It’s individual mentoring, plus an audience.
-An unstructured conversation that’s open for spectators, a code review session that’ll go on YouTube once it’s done, and so on.
-- The time vs. commitment question becomes a non-issue. If the person you’re teaching disappears tomorrow, that mentoring session isn’t wasted time. Multiple people learned from it. It’s on YouTube now and anyone can watch it forever. You didn’t invest to teach one person. You invested time to create a community resource.
-- It generates more feedback. Meaning if you don’t know how to mentor, you’ll learn faster this way. And the same if you don’t know how to learn. Making these processes improve becomes a community effort.
-- Instead of catering to the needs of a single individual, you can cater to the needs of a community; while at the same time teaching in a one-on-one manner that’s more effective on the learner’s side (as opposed to say watching tutorials in which mentors are talking to themselves).
-It’s awesome.
+O que é? É mentoring individual, com audiência.
+
+Idéias:
+
+- Sessões de pair-programming... num hangout aberto.
+
+- Code reviews... no YouTube.
+
+- Conversas não-estruturadas... onde um monte de gente participa.
+
+Vantagens:
+
+- A questão de comprometimento individual desaparece. Aqui se cria resources para uma comunidade, não para um indivíduo.
+
+- Há mais feedback para todas as partes envolvidas, fazendo com que o processo se aprimore mais rapidamente.
+
+- O foco pode estar nas necessidades da comunidade, não de indivíduo isolado, mas sem perder a característica um-a-um que torna o mentoring tão mais eficiente que tutoriais e artigos, por exemplo.
 
 * Minha experiência, parte 2.
 
 * O momento da virada.
 
 - Aprendi que é difícil pra todo mundo. O problema não era eu.
-- Me ajuda, porra.
-- Me ajuda assim, assim, e assado.
-- Precisamos de meetings. One-on-ones. Code reviews.
+- O momento "Me ajuda, caramba!"
+- "Mas me ajuda assim, assim, e assado."
+- "Precisamos de meetings. One-on-ones. Code reviews."
 
 * Consertando: comunidade.
 
 * Documentação
 
-The contributor guide we had before was multi-page document that lived in the community repo. It was spread into multiple different folders and it was all user generated. People would just go and write a how-to or a manual on whatever subject they wanted.
-It was good at first because it allowed the community to have a say in how to contribute to the project, but after a while it resulted in lots of duplicated, not updated, confusing, and disorganized information.
-Now we need a unified vision, and that’s what’s being done right now. Pulling the docs, and working on them, making discoverability better, and so on.
-- The idea is then for contributor docs and end-user docs to be on the same place, and it will all be housed in k8s.io.
-And here’s what the new contributor guide looks like now. https://github.com/kubernetes/community/tree/master/contributors/guide
+O contributor's guide do Kubernetes costumava ser... aqueles 70 docs jogados numa pasta.
+
+Cada um escrevia um pedaço do jeito que queria.
+
+No começo isso era bom, pois assim a própria comunidade podia decidir o que documentar. Mas o projeto cresceu, e virou zona.
+
+Nos últimos meses uma galera foi atrás de consertar essa situação e criar um guia claro e conciso.
+
+Tá lindo.
 
 * Mentoring
 
-- For the long term, there’s an idea being studied about a group mentoring initiative in which we’d take ten people or so and take them through a semi-structured learning environment for about three months. After that they’d graduate up the Kubernetes hierarchy (e.g. members become reviewers, or reviewers become approvers.)
-- This of course raises the question of training mentors, which is still to be discussed.
-- knowing how to teach while also sharing passion and enthusiasm. And of course a sense of genuinely wanting to help is 100% required.
-- Outreachy and Google Summer of Code go here
+- Há um programa de mentoring coletivo dando seus primeiros passos.
+
+- São grupos de umas 10 pessoas estudando certos assuntos específico. A idéia é que estes grupos subam um degrau na hierarquia do Kubernetes. (Membros viram reviewers, reviewers viram approvers, por aí vai.)
+
+- E falando de mentoring, como já mencionado, o Kubernetes participa de programas como Outreachy e Google Summer of Code.
 
 * Meet Our Contributors
 
-- You might be familiar with Office Hours, where Kubernetes users can ask questions which are then answered in a livestream.
-- So now there’s also Meet Our Contributors, which is similar, but targeted at contributors. As per the description on that link:
-- Meet Our Contributors gives you a monthly one-hour opportunity to ask questions about our upstream community, watch interviews with our contributors, and participate in peer code reviews.
-- The first installment took place on February 7th, and it was awesome.  https://www.youtube.com/watch?v=iqtZKQ2j-LM
-- Once somebody tells me e.g. this code is supposed to do this in such and such a way for such and such objectives, then it’s clear and it’s easy. → After that Aaron Crickenberger adds that although he’s been with the project since before 1.0 even, when he was asked to do work in a new area the other day he still had to go to the people in charge for directions.
+- Existe um esquema chamado Office Hours, onde membros do Kubernetes respondem dúvidas dos usuários em um live stream.
+
+- Agora também tem Meet Our Contributors. A mesma coisa, mas para contribuidores.
+
+- A descrição oficial: "Meet Our Contributors gives you a monthly one-hour opportunity to ask questions about our upstream community, watch interviews with our contributors, and participate in peer code reviews."
+
+- A primeira edição foi dia 7 de fevereiro. Eu participei!
 
 * Consertando: código.
 
 * A situação atual.
 
 Sean:
-For example, there are so many different clients that can talk to the API server. There’s dynamic client, there’s OpenAPI schema, there’s client-go which has the hardcoded types, there’s the REST client.
+
+"For example, there are so many different clients that can talk to the API server. There’s dynamic client, there’s OpenAPI schema, there’s client-go which has the hardcoded types, there’s the REST client.
 There’s no reason for how things are done and there’s certainly not any documentation at a high level of what goes where.
+
 The interaction between components of each of them is a mystery. Projects grow and grow and you just tack stuff onto it ’til it’s a huge difficult mess.
+
 There are very few people who understands the whole scope of the client to the API server, no one besides Phil, I think.
+
 Even people who work on this as their day job only know parts of it; the complexity is substantial. Even for small parts it’s a daunting system, and anyone who has made even small PRs is already in the top percentile of the people who understand this.
-Right now there’s this massive monolith, and the path Phil is trying to take us towards is breaking this monolith into smaller tools.
+
+Right now there’s this massive monolith, and the path Phil is trying to take us towards is breaking this monolith into smaller tools."
 
 * A situação atual.
 
- Phillip Wittrock, SIG CLI lead, Google
-The theory is that the biggest challenge for developers is incidental complexity.
+Phillip Wittrock, SIG-CLI lead, Google:
+
+"The theory is that the biggest challenge for developers is incidental complexity.
+
 Ideally you’d develop self contained bits where you only need to understand how to use the library, not how it works. So if you have a system that’s three libraries, each with a focussed purpose and a well defined interface, and then a program that invokes those libraries, a developer can approach the system learning only about the program they’re modifying, which is 1/4 of the system.
+
 If instead the program implements all the stuff in the libraries, the developer needs to understand the interactions of the full system, and separate out the bits that impact them versus the bits that don’t. And interactions between components are N to N, so you get an explosion of complexity (combinatorics).
-So if you want to build a system approachable by new developers you need to keep it simple and focussed. As you expand the system to do more things, you need to logically separate the parts into different packages and subcomponents with clear interfaces.
+
+So if you want to build a system approachable by new developers you need to keep it simple and focussed. As you expand the system to do more things, you need to logically separate the parts into different packages and subcomponents with clear interfaces."
 
 * A situação atual.
 
-Then I asked about projects that make it easy for new developers to join.
-I don’t think they’re approached quite like “we need to make it easy for new developers to join this project,” but more like, “the code needs to be clean and well structured.” Which is really 80% of making it easy for new developers to join.
+Perguntei sobre que características tornam um projeto acessível para novos contribuidores:
+
+"I don’t think they’re approached quite like 'we need to make it easy for new developers to join this project,' but more like, 'the code needs to be clean and well structured.' Which is really 80% of making it easy for new developers to join."
 
 * O futuro ideal.
 
-ieces consumed by groups other than the authoring group must be simple, well documented and developed independently from the components that consume them. This can be achieved through:
+"Pieces consumed by groups other than the authoring group must be simple, well documented and developed independently from the components that consume them. This can be achieved through:
+
 – Minimizing cross group dependencies — enabling groups to own their development end to end (proposal, development, testing, publish release artifact, documentation)
+
 – Ensuring that necessary cross group dependencies are simple, well understood and well documented
+
 – As Kubernetes contributor, I should be able to understand how to use the public libraries / tools published by groups I am not a member of without learning how they are implemented or reading their source code.
-– As a Kubernetes contributor, I should be able to understand how to use the public libraries / tools published by groups I am not a member without soliciting the attention of a member of those groups.
+
+– As a Kubernetes contributor, I should be able to understand how to use the public libraries / tools published by groups I am not a member without soliciting the attention of a member of those groups."
 
 * Você.
 
-* Quer contribuir?
+* Quer contribuir, mas tem dificuldades?
 
-Be loud. Ask for it. People are busy with their own lives, they aren’t thinking of you all day and wondering if everything is okay. So if you need something, let people know. They often do want to help.
-Keep in mind that mentoring is hard. It’s a skill in itself, and people aren’t born knowing it. So if you need different help than you’re getting, just plain and simple ask for what you need. People genuinely want to help, and often, if they can, they’ll oblige.
-And like Nikhita mentioned in the Meet Our Contributors episode above, know that these things are hard. They just are. I remember being so pissed and upset and at the same time relieved when I learned I wasn’t particularly stupid. The reason things were difficult wasn’t because I wasn’t putting in enough effort, or because I wasn’t capable. Things are just hard, period. Be patient.
+- Peça ajuda. Peça claramente. As pessoas são ocupadas, elas não sabem do que você precisa. Se você pedir, já é meio caminho andado. Em geral, as pessoas gostam de ajudar.
 
-* Quer ajudar?
+- Tenha em mente que ajudar é difícil. Muitas vezes a vontade existe, mas não se sabe como. Se você precisa que ajudem de um jeito diferente do que estão oferecendo, peça. As pessoas gostam de ajudar.
 
-I recommend looking into the disciplines that make up developer advocacy/evangelism/relations. Keynote talks aren’t required. Focus instead of the art of bringing tools and developers closer together. If you want not only to produce code but to reach people, you’ll like it.
+- E saiba que contribuir para um projeto desses é difícil. Não é culpa sua, não é questão do seu nível de habilidade. É difícil pra todo mundo. Tenha paciência.
+
+* Tem experiência, mas não sabe como ajudar?
+
+Dá uma olhada nas disciplinas que por trás de developer advocacy, developer evangelism, ou developer relations.
+
+Não precisa dar palestras. Foque na arte de conectar ferramentas com developers. Se você quer não somente escrever código, mas conectar pessoas, vai curtir.
 
 * Minha experiência, parte 3.
 
 * No fim dessa história toda...
 
-- I'm fearless and I can take on anything.
+- Recebi ajuda.
+
+- Acabei pegando o jeito.
+
+- Fiz contribuições, e agora tem um library lá com meu nome embaixo.
+
+* Qual o sentimento predominante ao final do internship? 
+
+Que desafio nenhum é grande demais.
+
+Kubernetes for life.
 
 * Por fim...
 
@@ -271,8 +362,10 @@ I recommend looking into the disciplines that make up developer advocacy/evangel
 
 Onboarding series
 Talk Montanhas
-1o Meet contributors
+1o Meet contributors https://www.youtube.com/watch?v=iqtZKQ2j-LM
 https://medium.com/@ashleymcnamara/what-is-developer-advocacy-3a92442b627c
+
+And here’s what the new contributor guide looks like now. https://github.com/kubernetes/community/tree/master/contributors/guide
 
 * Agradecimentos
 
